@@ -38,17 +38,17 @@ namespace CalculoObras
             this.numericUpDownPrazo = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonAdicionar = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.numericUpDownPrazo2 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonAdicionar2 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.dateTimePickerInicio2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazoContratual)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazo)).BeginInit();
@@ -76,6 +76,7 @@ namespace CalculoObras
             this.dateTimePickerDataInicio.Name = "dateTimePickerDataInicio";
             this.dateTimePickerDataInicio.Size = new System.Drawing.Size(123, 26);
             this.dateTimePickerDataInicio.TabIndex = 1;
+            this.dateTimePickerDataInicio.Value = new System.DateTime(2017, 6, 28, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -105,7 +106,7 @@ namespace CalculoObras
             this.numericUpDownPrazoContratual.Size = new System.Drawing.Size(97, 26);
             this.numericUpDownPrazoContratual.TabIndex = 3;
             this.numericUpDownPrazoContratual.Value = new decimal(new int[] {
-            1,
+            365,
             0,
             0,
             0});
@@ -122,10 +123,10 @@ namespace CalculoObras
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.numericUpDownPrazo);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.buttonAdicionar);
-            this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.dateTimePickerInicio);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 52);
@@ -178,15 +179,6 @@ namespace CalculoObras
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(17, 63);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(396, 124);
-            this.listBox1.TabIndex = 19;
-            // 
             // dateTimePickerInicio
             // 
             this.dateTimePickerInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,10 +202,10 @@ namespace CalculoObras
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.listBox2);
             this.groupBox2.Controls.Add(this.numericUpDownPrazo2);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.buttonAdicionar2);
-            this.groupBox2.Controls.Add(this.listBox2);
             this.groupBox2.Controls.Add(this.dateTimePickerInicio2);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(445, 53);
@@ -266,15 +258,6 @@ namespace CalculoObras
             this.buttonAdicionar2.UseVisualStyleBackColor = true;
             this.buttonAdicionar2.Click += new System.EventHandler(this.buttonAdicionar2_Click);
             // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(17, 63);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(396, 124);
-            this.listBox2.TabIndex = 19;
-            // 
             // dateTimePickerInicio2
             // 
             this.dateTimePickerInicio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,6 +286,26 @@ namespace CalculoObras
             this.richTextBox1.Size = new System.Drawing.Size(855, 168);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(17, 63);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(396, 124);
+            this.listBox1.TabIndex = 23;
+            this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 20;
+            this.listBox2.Location = new System.Drawing.Point(17, 63);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(396, 124);
+            this.listBox2.TabIndex = 25;
+            this.listBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox2_KeyDown);
             // 
             // Form1
             // 
@@ -344,12 +347,10 @@ namespace CalculoObras
         private System.Windows.Forms.Button buttonCalcular;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonAdicionar;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonAdicionar2;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.DateTimePicker dateTimePickerInicio2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richTextBox1;
@@ -357,6 +358,8 @@ namespace CalculoObras
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDownPrazo2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
 

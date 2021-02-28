@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace CalculoObras
 {
-    public class Classe
+    public class Historico
     {
-        public Classe(DateTime data, string descricao = null/*, bool contabilizar = false*/)
+        public Historico(int numero, DateTime data, string descricao = null)
         {
+            this.Numero = numero;
             this.Data = data.Date;
             this.Descricao = descricao;
-            //this.Contabilizar = contabilizar;
         }
 
+        public int Numero { get; set; }
         public DateTime Data { get; set; }
         public string Descricao { get; set; }
-        //public bool Contabilizar { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0} - {1}", Data.ToShortDateString(), Descricao);
+            return string.Format("Historico => Numero: {0} - Data: {1} - Descricao: {2}", Numero, Data.ToShortDateString(), Descricao);
         }
     }
 }

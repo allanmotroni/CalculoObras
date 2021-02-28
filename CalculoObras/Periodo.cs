@@ -8,13 +8,7 @@ namespace CalculoObras
 {
     public class Periodo
     {
-        public enum EnumTipo
-        {
-            Normal,
-            TermoAditamento,
-            OrdemSuspensao
-        }
-
+        
         public Periodo(string descricao, DateTime data, int dias, EnumTipo tipo)
         {
             Descricao = descricao;
@@ -23,26 +17,31 @@ namespace CalculoObras
             Tipo = tipo;
         }
 
+        public enum EnumTipo
+        {
+            Normal,
+            TermoAditamento,
+            OrdemSuspensao
+        }
+
         public string Descricao { get; private set; }
         public int Contador { get; private set; }
         public DateTime Data { get; private set; }
         public int Dias { get; private set; }
         public int DiasUtilizados { get; private set; }
         public EnumTipo Tipo { get; private set; }
-
-        public void Incrementar()
-        {
-            Contador++;
-        }
+                
 
         public void Contabilizar()
         {
             DiasUtilizados++;
+            Contador++;
         }
 
         public void Finalizar()
         {
-            DiasUtilizados = Dias;
+            if (DiasUtilizados < Dias)
+                DiasUtilizados = Dias;
         }
 
         public bool PossuiSaldo()
@@ -57,7 +56,7 @@ namespace CalculoObras
 
         public override string ToString()
         {
-            return string.Format("Periodo => Contador: {0} - Data: {1} - Descricao: {2} - DiasUtilizados: {3}", Contador, Data.ToString("dd/MM/yyyy"), Descricao, DiasUtilizados);
+            return string.Format("Periodo => Contador: {0} - Data: {1} - Descricao: {2} - DiasUtilizados: {3} - Tipo: {4} - Saldo: {5}", Contador, Data.ToString("dd/MM/yyyy"), Descricao, DiasUtilizados, Tipo, Saldo());
         }
 
     }

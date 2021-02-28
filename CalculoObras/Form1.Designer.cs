@@ -49,6 +49,10 @@ namespace CalculoObras
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxDescricaoTermoAditamento = new System.Windows.Forms.TextBox();
+            this.textBoxDescricaoOrdemSuspensao = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazoContratual)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazo)).BeginInit();
@@ -60,7 +64,7 @@ namespace CalculoObras
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 23);
+            this.label1.Location = new System.Drawing.Point(13, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 20);
@@ -71,12 +75,12 @@ namespace CalculoObras
             // 
             this.dateTimePickerDataInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataInicio.Location = new System.Drawing.Point(120, 18);
+            this.dateTimePickerDataInicio.Location = new System.Drawing.Point(108, 18);
             this.dateTimePickerDataInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePickerDataInicio.Name = "dateTimePickerDataInicio";
             this.dateTimePickerDataInicio.Size = new System.Drawing.Size(123, 26);
             this.dateTimePickerDataInicio.TabIndex = 1;
-            this.dateTimePickerDataInicio.Value = new System.DateTime(2017, 6, 28, 0, 0, 0, 0);
+            this.dateTimePickerDataInicio.Value = new System.DateTime(2021, 2, 28, 11, 37, 24, 0);
             // 
             // label2
             // 
@@ -106,14 +110,14 @@ namespace CalculoObras
             this.numericUpDownPrazoContratual.Size = new System.Drawing.Size(97, 26);
             this.numericUpDownPrazoContratual.TabIndex = 3;
             this.numericUpDownPrazoContratual.Value = new decimal(new int[] {
-            365,
+            1,
             0,
             0,
             0});
             // 
             // buttonCalcular
             // 
-            this.buttonCalcular.Location = new System.Drawing.Point(12, 259);
+            this.buttonCalcular.Location = new System.Drawing.Point(12, 277);
             this.buttonCalcular.Name = "buttonCalcular";
             this.buttonCalcular.Size = new System.Drawing.Size(855, 29);
             this.buttonCalcular.TabIndex = 5;
@@ -123,6 +127,8 @@ namespace CalculoObras
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxDescricaoOrdemSuspensao);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.numericUpDownPrazo);
             this.groupBox1.Controls.Add(this.label4);
@@ -131,7 +137,7 @@ namespace CalculoObras
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(422, 200);
+            this.groupBox1.Size = new System.Drawing.Size(422, 219);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordem de Suspensão";
@@ -202,6 +208,8 @@ namespace CalculoObras
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxDescricaoTermoAditamento);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.listBox2);
             this.groupBox2.Controls.Add(this.numericUpDownPrazo2);
             this.groupBox2.Controls.Add(this.label5);
@@ -210,7 +218,7 @@ namespace CalculoObras
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(445, 53);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(422, 200);
+            this.groupBox2.Size = new System.Drawing.Size(422, 218);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Termo de Aditamento";
@@ -267,6 +275,7 @@ namespace CalculoObras
             this.dateTimePickerInicio2.Name = "dateTimePickerInicio2";
             this.dateTimePickerInicio2.Size = new System.Drawing.Size(123, 26);
             this.dateTimePickerInicio2.TabIndex = 16;
+            this.dateTimePickerInicio2.Value = new System.DateTime(2021, 2, 28, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -281,9 +290,12 @@ namespace CalculoObras
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 294);
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.Location = new System.Drawing.Point(12, 312);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(855, 168);
+            this.richTextBox1.Size = new System.Drawing.Size(855, 259);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
             // 
@@ -291,9 +303,9 @@ namespace CalculoObras
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(17, 63);
+            this.listBox1.Location = new System.Drawing.Point(17, 103);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(396, 124);
+            this.listBox1.Size = new System.Drawing.Size(396, 104);
             this.listBox1.TabIndex = 23;
             this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
             // 
@@ -301,17 +313,53 @@ namespace CalculoObras
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(17, 63);
+            this.listBox2.Location = new System.Drawing.Point(17, 103);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(396, 124);
+            this.listBox2.Size = new System.Drawing.Size(396, 104);
             this.listBox2.TabIndex = 25;
             this.listBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox2_KeyDown);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(13, 71);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 20);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Descrição:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(13, 70);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 20);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Descrição:";
+            // 
+            // textBoxDescricaoTermoAditamento
+            // 
+            this.textBoxDescricaoTermoAditamento.Location = new System.Drawing.Point(104, 67);
+            this.textBoxDescricaoTermoAditamento.Name = "textBoxDescricaoTermoAditamento";
+            this.textBoxDescricaoTermoAditamento.Size = new System.Drawing.Size(309, 26);
+            this.textBoxDescricaoTermoAditamento.TabIndex = 27;
+            // 
+            // textBoxDescricaoOrdemSuspensao
+            // 
+            this.textBoxDescricaoOrdemSuspensao.Location = new System.Drawing.Point(104, 68);
+            this.textBoxDescricaoOrdemSuspensao.Name = "textBoxDescricaoOrdemSuspensao";
+            this.textBoxDescricaoOrdemSuspensao.Size = new System.Drawing.Size(309, 26);
+            this.textBoxDescricaoOrdemSuspensao.TabIndex = 28;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 474);
+            this.ClientSize = new System.Drawing.Size(879, 583);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -360,6 +408,10 @@ namespace CalculoObras
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.TextBox textBoxDescricaoOrdemSuspensao;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxDescricaoTermoAditamento;
+        private System.Windows.Forms.Label label8;
     }
 }
 

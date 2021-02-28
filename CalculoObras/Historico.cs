@@ -21,7 +21,7 @@ namespace CalculoObras
 
         public override string ToString()
         {
-            return string.Format("Historico => Numero: {0} - Data: {1} - Descricao: {2}", Numero, Data.ToShortDateString(), Descricao);
+            return string.Format("{0} - {1} - {2}", Numero, Data.ToShortDateString(), Descricao);
         }
     }
 }

@@ -56,6 +56,11 @@ namespace CalculoObras
             return Dias - DiasUtilizados;
         }
 
+        public void IncrementarDia()
+        {
+            Dias++;
+        }
+
         public override string ToString()
         {
             return string.Format("Periodo => Contador: {0} - Data: {1} - Descricao: {2} - DiasUtilizados: {3} - Tipo: {4} - Saldo: {5}", Contador, Data.ToString("dd/MM/yyyy"), Descricao, DiasUtilizados, Tipo, Saldo());

@@ -54,11 +54,17 @@ namespace CalculoObras
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.buttonLimpar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownDiaCalcularData = new System.Windows.Forms.NumericUpDown();
+            this.dateTimePickerDataCalcularData = new System.Windows.Forms.DateTimePicker();
+            this.labelDataCalculada = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazoContratual)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazo)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazo2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDiaCalcularData)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,7 +124,7 @@ namespace CalculoObras
             // 
             // buttonCalcular
             // 
-            this.buttonCalcular.Location = new System.Drawing.Point(445, 277);
+            this.buttonCalcular.Location = new System.Drawing.Point(445, 287);
             this.buttonCalcular.Name = "buttonCalcular";
             this.buttonCalcular.Size = new System.Drawing.Size(422, 29);
             this.buttonCalcular.TabIndex = 5;
@@ -136,7 +142,7 @@ namespace CalculoObras
             this.groupBox1.Controls.Add(this.buttonAdicionar);
             this.groupBox1.Controls.Add(this.dateTimePickerInicio);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 52);
+            this.groupBox1.Location = new System.Drawing.Point(12, 62);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 219);
             this.groupBox1.TabIndex = 15;
@@ -245,7 +251,7 @@ namespace CalculoObras
             this.groupBox2.Controls.Add(this.buttonAdicionar2);
             this.groupBox2.Controls.Add(this.dateTimePickerInicio2);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(445, 53);
+            this.groupBox2.Location = new System.Drawing.Point(445, 63);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(422, 218);
             this.groupBox2.TabIndex = 16;
@@ -350,15 +356,15 @@ namespace CalculoObras
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 312);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 322);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(855, 259);
+            this.richTextBox1.Size = new System.Drawing.Size(855, 261);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
             // 
             // buttonLimpar
             // 
-            this.buttonLimpar.Location = new System.Drawing.Point(12, 277);
+            this.buttonLimpar.Location = new System.Drawing.Point(12, 287);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(422, 29);
             this.buttonLimpar.TabIndex = 18;
@@ -366,11 +372,68 @@ namespace CalculoObras
             this.buttonLimpar.UseVisualStyleBackColor = true;
             this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.labelDataCalculada);
+            this.groupBox3.Controls.Add(this.numericUpDownDiaCalcularData);
+            this.groupBox3.Controls.Add(this.dateTimePickerDataCalcularData);
+            this.groupBox3.Location = new System.Drawing.Point(549, 10);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(318, 51);
+            this.groupBox3.TabIndex = 19;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Calcular data";
+            // 
+            // numericUpDownDiaCalcularData
+            // 
+            this.numericUpDownDiaCalcularData.Location = new System.Drawing.Point(130, 19);
+            this.numericUpDownDiaCalcularData.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numericUpDownDiaCalcularData.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownDiaCalcularData.Name = "numericUpDownDiaCalcularData";
+            this.numericUpDownDiaCalcularData.Size = new System.Drawing.Size(60, 26);
+            this.numericUpDownDiaCalcularData.TabIndex = 25;
+            this.numericUpDownDiaCalcularData.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownDiaCalcularData.ValueChanged += new System.EventHandler(this.numericUpDownDiaCalcularData_ValueChanged);
+            // 
+            // dateTimePickerDataCalcularData
+            // 
+            this.dateTimePickerDataCalcularData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDataCalcularData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDataCalcularData.Location = new System.Drawing.Point(6, 19);
+            this.dateTimePickerDataCalcularData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePickerDataCalcularData.Name = "dateTimePickerDataCalcularData";
+            this.dateTimePickerDataCalcularData.Size = new System.Drawing.Size(117, 26);
+            this.dateTimePickerDataCalcularData.TabIndex = 24;
+            this.dateTimePickerDataCalcularData.ValueChanged += new System.EventHandler(this.dateTimePickerDataCalcularData_ValueChanged);
+            // 
+            // labelDataCalculada
+            // 
+            this.labelDataCalculada.AutoSize = true;
+            this.labelDataCalculada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataCalculada.Location = new System.Drawing.Point(200, 21);
+            this.labelDataCalculada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDataCalculada.Name = "labelDataCalculada";
+            this.labelDataCalculada.Size = new System.Drawing.Size(0, 20);
+            this.labelDataCalculada.TabIndex = 26;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 583);
+            this.ClientSize = new System.Drawing.Size(879, 595);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox2);
@@ -393,6 +456,9 @@ namespace CalculoObras
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazo2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDiaCalcularData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,6 +491,10 @@ namespace CalculoObras
         private System.Windows.Forms.TextBox textBoxDescricaoTermoAditamento;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonLimpar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label labelDataCalculada;
+        private System.Windows.Forms.NumericUpDown numericUpDownDiaCalcularData;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDataCalcularData;
     }
 }
 

@@ -35,24 +35,25 @@ namespace CalculoObras
             this.numericUpDownPrazoContratual = new System.Windows.Forms.NumericUpDown();
             this.buttonCalcular = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxDescricaoOrdemSuspensao = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.numericUpDownPrazo = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxDescricaoTermoAditamento = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.numericUpDownPrazo2 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonAdicionar2 = new System.Windows.Forms.Button();
             this.dateTimePickerInicio2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxDescricaoTermoAditamento = new System.Windows.Forms.TextBox();
-            this.textBoxDescricaoOrdemSuspensao = new System.Windows.Forms.TextBox();
+            this.buttonLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazoContratual)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrazo)).BeginInit();
@@ -117,9 +118,9 @@ namespace CalculoObras
             // 
             // buttonCalcular
             // 
-            this.buttonCalcular.Location = new System.Drawing.Point(12, 277);
+            this.buttonCalcular.Location = new System.Drawing.Point(445, 277);
             this.buttonCalcular.Name = "buttonCalcular";
-            this.buttonCalcular.Size = new System.Drawing.Size(855, 29);
+            this.buttonCalcular.Size = new System.Drawing.Size(422, 29);
             this.buttonCalcular.TabIndex = 5;
             this.buttonCalcular.Text = "Calcular";
             this.buttonCalcular.UseVisualStyleBackColor = true;
@@ -142,6 +143,34 @@ namespace CalculoObras
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordem de Suspensão";
             // 
+            // textBoxDescricaoOrdemSuspensao
+            // 
+            this.textBoxDescricaoOrdemSuspensao.Location = new System.Drawing.Point(104, 68);
+            this.textBoxDescricaoOrdemSuspensao.Name = "textBoxDescricaoOrdemSuspensao";
+            this.textBoxDescricaoOrdemSuspensao.Size = new System.Drawing.Size(309, 26);
+            this.textBoxDescricaoOrdemSuspensao.TabIndex = 2322;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(13, 71);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 20);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Descrição:";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(17, 103);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(396, 104);
+            this.listBox1.TabIndex = 28;
+            this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
+            // 
             // numericUpDownPrazo
             // 
             this.numericUpDownPrazo.Location = new System.Drawing.Point(308, 30);
@@ -157,7 +186,7 @@ namespace CalculoObras
             0});
             this.numericUpDownPrazo.Name = "numericUpDownPrazo";
             this.numericUpDownPrazo.Size = new System.Drawing.Size(72, 26);
-            this.numericUpDownPrazo.TabIndex = 22;
+            this.numericUpDownPrazo.TabIndex = 20;
             this.numericUpDownPrazo.Value = new decimal(new int[] {
             1,
             0,
@@ -180,7 +209,7 @@ namespace CalculoObras
             this.buttonAdicionar.Location = new System.Drawing.Point(386, 28);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(27, 29);
-            this.buttonAdicionar.TabIndex = 20;
+            this.buttonAdicionar.TabIndex = 23;
             this.buttonAdicionar.Text = "+";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
@@ -223,6 +252,34 @@ namespace CalculoObras
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Termo de Aditamento";
             // 
+            // textBoxDescricaoTermoAditamento
+            // 
+            this.textBoxDescricaoTermoAditamento.Location = new System.Drawing.Point(104, 67);
+            this.textBoxDescricaoTermoAditamento.Name = "textBoxDescricaoTermoAditamento";
+            this.textBoxDescricaoTermoAditamento.Size = new System.Drawing.Size(309, 26);
+            this.textBoxDescricaoTermoAditamento.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(13, 70);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 20);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Descrição:";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 20;
+            this.listBox2.Location = new System.Drawing.Point(17, 103);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(396, 104);
+            this.listBox2.TabIndex = 27;
+            this.listBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox2_KeyDown);
+            // 
             // numericUpDownPrazo2
             // 
             this.numericUpDownPrazo2.Location = new System.Drawing.Point(308, 29);
@@ -238,7 +295,7 @@ namespace CalculoObras
             0});
             this.numericUpDownPrazo2.Name = "numericUpDownPrazo2";
             this.numericUpDownPrazo2.Size = new System.Drawing.Size(72, 26);
-            this.numericUpDownPrazo2.TabIndex = 24;
+            this.numericUpDownPrazo2.TabIndex = 20;
             this.numericUpDownPrazo2.Value = new decimal(new int[] {
             1,
             0,
@@ -261,7 +318,7 @@ namespace CalculoObras
             this.buttonAdicionar2.Location = new System.Drawing.Point(386, 28);
             this.buttonAdicionar2.Name = "buttonAdicionar2";
             this.buttonAdicionar2.Size = new System.Drawing.Size(27, 29);
-            this.buttonAdicionar2.TabIndex = 20;
+            this.buttonAdicionar2.TabIndex = 25;
             this.buttonAdicionar2.Text = "+";
             this.buttonAdicionar2.UseVisualStyleBackColor = true;
             this.buttonAdicionar2.Click += new System.EventHandler(this.buttonAdicionar2_Click);
@@ -299,67 +356,22 @@ namespace CalculoObras
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
             // 
-            // listBox1
+            // buttonLimpar
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(17, 103);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(396, 104);
-            this.listBox1.TabIndex = 23;
-            this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(17, 103);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(396, 104);
-            this.listBox2.TabIndex = 25;
-            this.listBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox2_KeyDown);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 71);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 20);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Descrição:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 70);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 20);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Descrição:";
-            // 
-            // textBoxDescricaoTermoAditamento
-            // 
-            this.textBoxDescricaoTermoAditamento.Location = new System.Drawing.Point(104, 67);
-            this.textBoxDescricaoTermoAditamento.Name = "textBoxDescricaoTermoAditamento";
-            this.textBoxDescricaoTermoAditamento.Size = new System.Drawing.Size(309, 26);
-            this.textBoxDescricaoTermoAditamento.TabIndex = 27;
-            // 
-            // textBoxDescricaoOrdemSuspensao
-            // 
-            this.textBoxDescricaoOrdemSuspensao.Location = new System.Drawing.Point(104, 68);
-            this.textBoxDescricaoOrdemSuspensao.Name = "textBoxDescricaoOrdemSuspensao";
-            this.textBoxDescricaoOrdemSuspensao.Size = new System.Drawing.Size(309, 26);
-            this.textBoxDescricaoOrdemSuspensao.TabIndex = 28;
+            this.buttonLimpar.Location = new System.Drawing.Point(12, 277);
+            this.buttonLimpar.Name = "buttonLimpar";
+            this.buttonLimpar.Size = new System.Drawing.Size(422, 29);
+            this.buttonLimpar.TabIndex = 18;
+            this.buttonLimpar.Text = "Limpar";
+            this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 583);
+            this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -412,6 +424,7 @@ namespace CalculoObras
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxDescricaoTermoAditamento;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonLimpar;
     }
 }
 

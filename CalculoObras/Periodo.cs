@@ -8,7 +8,7 @@ namespace CalculoObras
 {
     public class Periodo
     {
-        
+
         public Periodo(string descricao, DateTime data, int dias, EnumTipo tipo)
         {
             Descricao = descricao;
@@ -30,7 +30,9 @@ namespace CalculoObras
         public int Dias { get; private set; }
         public int DiasUtilizados { get; private set; }
         public EnumTipo Tipo { get; private set; }
-                
+
+        public string DescricaoStr { get { return string.Format("{0} - {1} - {2}", Data.ToString("dd/MM/yyyy"), Descricao, Dias); } }
+
 
         public void Contabilizar()
         {

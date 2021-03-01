@@ -211,44 +211,83 @@ namespace CalculoObras
 
         private void PreencherListBox(ListBox listBox, Periodo item)
         {
-            listBox.DisplayMember = "Descricao";
+            listBox.DisplayMember = "DescricaoStr";
             listBox.Items.Add(item);
         }
 
         private void listBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            bool comItemSelecionado = listBox1.SelectedIndex > -1;
-            bool comItens = listBox1.Items.Count > 0;
-            bool teclaDelete = e.KeyCode == Keys.Delete;
-            int indice = listBox1.SelectedIndex;
 
-            if (teclaDelete && comItens && comItemSelecionado)
+            try
             {
-                Periodo periodoSelecionado = listBox1.Items[indice] as Periodo;
-                if (periodoSelecionado != null)
+                bool comItemSelecionado = listBox1.SelectedIndex > -1;
+                bool comItens = listBox1.Items.Count > 0;
+                bool teclaDelete = e.KeyCode == Keys.Delete;
+                int indice = listBox1.SelectedIndex;
+
+                if (teclaDelete && comItens && comItemSelecionado)
                 {
-                    listBox1.Items.RemoveAt(indice);
-                    listaOrdemSuspensao.Remove(periodoSelecionado);
+                    Periodo periodoSelecionado = listBox1.Items[indice] as Periodo;
+                    if (periodoSelecionado != null)
+                    {
+                        listBox1.Items.RemoveAt(indice);
+                        listaOrdemSuspensao.Remove(periodoSelecionado);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void listBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            bool comItemSelecionado = listBox2.SelectedIndex > -1;
-            bool comItens = listBox2.Items.Count > 0;
-            bool teclaDelete = e.KeyCode == Keys.Delete;
-            int indice = listBox2.SelectedIndex;
-
-            if (teclaDelete && comItens && comItemSelecionado)
+            try
             {
-                Periodo periodoSelecionado = listBox2.Items[indice] as Periodo;
-                if (periodoSelecionado != null)
+                bool comItemSelecionado = listBox2.SelectedIndex > -1;
+                bool comItens = listBox2.Items.Count > 0;
+                bool teclaDelete = e.KeyCode == Keys.Delete;
+                int indice = listBox2.SelectedIndex;
+
+                if (teclaDelete && comItens && comItemSelecionado)
                 {
-                    listBox2.Items.RemoveAt(indice);
-                    listaTermoAditamento.Remove(periodoSelecionado);
+                    Periodo periodoSelecionado = listBox2.Items[indice] as Periodo;
+                    if (periodoSelecionado != null)
+                    {
+                        listBox2.Items.RemoveAt(indice);
+                        listaTermoAditamento.Remove(periodoSelecionado);
+                    }
                 }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonLimpar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LimparCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimparCampos()
+        {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+
+            textBoxDescricaoOrdemSuspensao.Clear();
+            textBoxDescricaoTermoAditamento.Clear();
+
+            richTextBox1.Clear();
         }
     }
 }

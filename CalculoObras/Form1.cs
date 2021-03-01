@@ -15,6 +15,7 @@ namespace CalculoObras
     {
         List<Periodo> listaOrdemSuspensao;
         List<Periodo> listaTermoAditamento;
+        
         public Form1()
         {
             InitializeComponent();
@@ -92,7 +93,6 @@ namespace CalculoObras
         {
             try
             {
-
                 List<Historico> listaHistorico = Processar(dataInicio.Date, prazoContratual);
                 return listaHistorico;
             }
@@ -104,10 +104,6 @@ namespace CalculoObras
 
         private List<Historico> Processar(DateTime data, int dias)
         {
-            //PreencherDadosMock();
-            //data = Convert.ToDateTime("28/06/2017");
-            //dias = 365;
-
             try
             {
                 List<DateTime> datas = DatasMock();
@@ -118,14 +114,14 @@ namespace CalculoObras
                 bool condicao = true;
                 Periodo termoAditamentoJaUtilizadoComSaldo = null;
 
+                listaTermoAditamento.ForEach(p=> p.Zerar());
                 List<Periodo> listaTermoAditamentoLocal = new List<Periodo>(listaTermoAditamento);
+
+                listaOrdemSuspensao.ForEach(p => p.Zerar());                
                 List<Periodo> listaOrdemSuspensaoLocal = new List<Periodo>(listaOrdemSuspensao);
 
                 while (condicao)
                 {
-                    //if (datas.Contains(dataAtual))
-                    //    Debugger.Break();
-
                     bool ehTermoAditamento = listaTermoAditamentoLocal.Any(p => p.PossuiSaldo() && p.Data == dataAtual);
                     bool ehOrdemSuspensao = listaOrdemSuspensaoLocal.Any(p => p.PossuiSaldo() && p.Data == dataAtual);
                     if (ehTermoAditamento || ehOrdemSuspensao)
@@ -145,7 +141,7 @@ namespace CalculoObras
                         termoAditamentoJaUtilizadoComSaldo = listaTermoAditamentoLocal.Where(p => p.Contador > 0 && p.PossuiSaldo()).OrderBy(p => p.Data).FirstOrDefault();
                         if (termoAditamentoJaUtilizadoComSaldo == null)
                         {
-                            if (periodoNormal.PossuiSaldo() && periodoNormal.Data.AddDays(periodoNormal.Dias) >= dataAtual)
+                            if (periodoNormal.PossuiSaldo())
                                 periodoAtual = periodoNormal;
                         }
                         else
@@ -155,16 +151,13 @@ namespace CalculoObras
                     }
 
                     periodoAtual.Contabilizar();
-                    if (periodoAtual.Tipo == Periodo.EnumTipo.OrdemSuspensao)
-                        periodoNormal.IncrementarDia();
-
+                    
                     listaHistorico.Add(new Historico(periodoAtual.Contador, dataAtual, periodoAtual.Descricao));
 
                     dataAtual = dataAtual.AddDays(1);
 
-                    condicao = listaTermoAditamentoLocal.Any(p => p.PossuiSaldo()) || listaOrdemSuspensaoLocal.Any(p => p.PossuiSaldo());
-                    if (!condicao)
-                        condicao = periodoNormal.PossuiSaldo() && periodoNormal.Data.AddDays(periodoNormal.Dias) > dataAtual;
+                    condicao = listaTermoAditamentoLocal.Any(p => p.PossuiSaldo()) || listaOrdemSuspensaoLocal.Any(p => p.PossuiSaldo()) || periodoNormal.PossuiSaldo();
+                    
                 }
 
                 return listaHistorico;
@@ -299,6 +292,9 @@ namespace CalculoObras
         {
             listBox1.Items.Clear();
             listBox2.Items.Clear();
+
+            listaTermoAditamento.Clear();
+            listaOrdemSuspensao.Clear();
 
             textBoxDescricaoOrdemSuspensao.Clear();
             textBoxDescricaoTermoAditamento.Clear();

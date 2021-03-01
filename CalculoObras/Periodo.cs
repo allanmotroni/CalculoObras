@@ -40,6 +40,12 @@ namespace CalculoObras
             Contador++;
         }
 
+        public void Zerar()
+        {
+            DiasUtilizados = 0;
+            Contador = 0;
+        }
+
         public void Finalizar()
         {
             if (DiasUtilizados < Dias)
